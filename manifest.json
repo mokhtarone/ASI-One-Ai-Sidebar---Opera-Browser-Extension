@@ -1,0 +1,73 @@
+{
+  "manifest_version": 3,
+  "name": "ASI:One Sidebar Extension",
+  "version": "2.0.0",
+  "description": "Extension pour accéder à ASI:One directement depuis la barre latérale d'Opera",
+  "author": "Votre Nom",
+  
+  "icons": {
+    "16": "logo.png",
+    "32": "logo.png",
+    "48": "logo.png",
+    "128": "logo.png"
+  },
+  
+  "action": {
+    "default_title": "ASI:One",
+    "default_icon": {
+      "16": "logo.png",
+      "32": "logo.png",
+      "48": "logo.png",
+      "128": "logo.png"
+    }
+  },
+  
+  "sidebar_action": {
+    "default_panel": "sidepanel.html",
+    "default_title": "ASI:One",
+    "default_icon": {
+      "16": "logo.png",
+      "32": "logo.png",
+      "48": "logo.png",
+      "128": "logo.png"
+    }
+  },
+  
+  "background": {
+    "service_worker": "background.js"
+  },
+  
+  "permissions": [
+    "storage",
+    "webRequest",
+    "declarativeNetRequest",
+    "declarativeNetRequestWithHostAccess"
+  ],
+  
+  "host_permissions": [
+    "https://asi1.ai/*",
+    "https://*.asi1.ai/*",
+    "*://*/*"
+  ],
+  
+  "declarative_net_request": {
+    "rule_resources": [
+      {
+        "id": "ruleset_1",
+        "enabled": true,
+        "path": "rules.json"
+      }
+    ]
+  },
+  
+  "web_accessible_resources": [
+    {
+      "resources": ["sidepanel.html", "inject.js"],
+      "matches": ["<all_urls>"]
+    }
+  ],
+  
+  "content_security_policy": {
+    "extension_pages": "script-src 'self'; object-src 'self'; frame-src https://asi1.ai https://*.asi1.ai"
+  }
+}
