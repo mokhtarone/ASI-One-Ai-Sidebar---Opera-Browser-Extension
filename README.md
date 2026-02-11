@@ -1,4 +1,5 @@
 # Installing the unofficial ASI:One Extension for Opera
+<img width="863" height="1389" alt="image" src="https://github.com/user-attachments/assets/fea9d24a-6bb1-4e50-8c99-3d50a30737bf" />
 
 ## Method 1: Installation in Developer Mode
 
